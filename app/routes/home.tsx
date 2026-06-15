@@ -21,13 +21,13 @@ export default function Home() {
       <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
     </div>
   </section>
-
+  {/* resume cards */}
   {resumes.length > 0 && (
-    <div className="reumes-section">
+    <div className="resumes-section">
       {resumes.map((resume) => (
-        <ResumeCard key={resume.id} resume={resume} />
+          <ResumeCard key={resume.id} resume={resume} />
   ))}
-      </div>
+    </div>
   )}
   </main>
   </>
