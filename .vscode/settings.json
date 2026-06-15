@@ -1,5 +1,5 @@
 {
-  "accessibility.signals.sounds.volume": 0,
   "audioCues.enabled": "off",
-  "accessibility.signals.debouncePositionChanges": false
+  "accessibility.signalOptions.volume": 0,
+  "accessibility.signalOptions.debouncePositionChanges": false
 }
