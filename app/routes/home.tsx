@@ -20,15 +20,15 @@ export default function Home() {
       <h1>Track Your Applications</h1>
       <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
     </div>
-  </section>
   {/* resume cards */}
   {resumes.length > 0 && (
     <div className="resumes-section">
       {resumes.map((resume) => (
-          <ResumeCard key={resume.id} resume={resume} />
-  ))}
+        <ResumeCard key={resume.id} resume={resume} />
+      ))}
     </div>
   )}
+  </section>
   </main>
   </>
 }
