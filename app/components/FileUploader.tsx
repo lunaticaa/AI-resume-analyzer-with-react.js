@@ -1,5 +1,6 @@
 import {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone'
+import formatSize from '../../lib/formatSize'
 
 interface FileUploaderProps {
   onFileSelect?: (file: File | null) => void;
@@ -7,7 +8,6 @@ interface FileUploaderProps {
 
 
 const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
-  const [file, setFile] = useState()
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0] || null;
     onFileSelect?.(file)
@@ -19,6 +19,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
   })
 
   const file = acceptedFiles[0] || null;
+
   return (
     <div className='w-full gradient-border'>
        <div {...getRootProps()}>
@@ -29,9 +30,15 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
         </div>
         {file ? (
           <div>
-
+            <div className='flex items-center space-x-3'>
+              <img src="/images/pdf.png" alt="pdf" className='size-10' />
+            <div>
+                <p className='text-sm font-medium text-gray-700 truncate max-w-xs'>{file.name}</p>
+                <p className='text-sm text-gray-500'>({formatSize(file.size)})</p>
+              </div>
+            </div>
           </div>
-        ): (
+        ) : (
           <div>
             <p className="text-lg text-gray-500">
               <span className='font-semibold'>
