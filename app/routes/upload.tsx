@@ -16,7 +16,16 @@ const upload = () => {
     const form = e.currentTarget.closest('form');
     if(!form) return;
     const formData = new FormData(form);
-    const
+    const companyName = formData.get('company-name');
+    const jobTitle = formData.get('job-title');
+    const jobDescription = formData.get('job-description');
+
+    console.log({
+      companyName,
+      jobTitle,
+      jobDescription
+    });
+    
   }
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
