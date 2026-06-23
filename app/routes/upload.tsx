@@ -12,7 +12,11 @@ const upload = () => {
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) =>{
-
+    e.preventDefault();
+    const form = e.currentTarget.closest('form');
+    if(!form) return;
+    const formData = new FormData(form);
+    const
   }
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
